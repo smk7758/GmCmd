@@ -1,0 +1,21 @@
+name: GmCmd
+main: my.smk.plugin.GmCmd.Main
+version: 0.0.2
+author: smk7758
+website(my): http://smk7758.web.fc2.com/
+website(plugin): none
+permissions:
+  GmCmd:
+    description: You can use GmCmd plugin.
+    default: false
+commands:
+  gm:
+    description: You can change your gamemode.
+  gm0:
+    description: You can change your gamemode.
+  gm1:
+    description: You can change your gamemode.
+  gm2:
+    description: You can change your gamemode.
+  gm3:
+    description: You can change your gamemode.
