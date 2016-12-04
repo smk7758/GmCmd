@@ -1,6 +1,6 @@
 name: GmCmd
 main: my.smk.plugin.GmCmd.Main
-version: 0.0.2
+version: 0.0.3
 author: smk7758
 website(my): http://smk7758.web.fc2.com/
 website(plugin): none

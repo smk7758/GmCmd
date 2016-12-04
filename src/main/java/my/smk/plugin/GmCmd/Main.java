@@ -28,18 +28,14 @@ public class Main extends JavaPlugin implements Listener {
 				if ((sender.hasPermission("GmCmd")) || (sender.isOp())) {
 					Player player = (Player) sender;
 					GameMode gm = player.getGameMode();
-					if (gm != null) {
-						if (gm == GameMode.CREATIVE) {
-							player.setGameMode(GameMode.SURVIVAL);
-							return true;
-						} else if (gm == GameMode.SURVIVAL) {
-							player.setGameMode(GameMode.CREATIVE);
-							return true;
-						} else {
-							player.setGameMode(GameMode.CREATIVE);
-							return true;
-						}
+					if (gm == GameMode.CREATIVE) {
+						player.setGameMode(GameMode.SURVIVAL);
+					} else if (gm == GameMode.SURVIVAL) {
+						player.setGameMode(GameMode.CREATIVE);
+					} else {
+						player.setGameMode(GameMode.CREATIVE);
 					}
+					return true;
 				} else {
 					sender.sendMessage(this.ErroPrefix + "You don't have permission to use gm command!");
 				}
@@ -47,24 +43,25 @@ public class Main extends JavaPlugin implements Listener {
 				sender.sendMessage("You have to use it in the game.(Player)");
 			}
 		}
-		if (cmd.getName().equalsIgnoreCase("gm0") || cmd.getName().equalsIgnoreCase("gm1") || cmd.getName().equalsIgnoreCase("gm2") || cmd.getName().equalsIgnoreCase("gm3")) {
+		if (cmd.getName().equalsIgnoreCase("gm0") || cmd.getName().equalsIgnoreCase("gm1") || cmd.getName().equalsIgnoreCase("gm2")
+				|| cmd.getName().equalsIgnoreCase("gm3")) {
 			if (sender instanceof Player) {
 				if ((sender.hasPermission("GmCmd")) || (sender.isOp())) {
-					Player player = (Player)sender;
-					GameMode gamemode_type = player.getGameMode();
+					Player player = (Player) sender;
+					GameMode gm = player.getGameMode();
 					if (cmd.getName().equalsIgnoreCase("gm0")) {
-						gamemode_type = GameMode.SURVIVAL;
+						gm = GameMode.SURVIVAL;
 					}
 					if (cmd.getName().equalsIgnoreCase("gm1")) {
-						gamemode_type = GameMode.CREATIVE;
+						gm = GameMode.CREATIVE;
 					}
 					if (cmd.getName().equalsIgnoreCase("gm2")) {
-						gamemode_type = GameMode.ADVENTURE;
+						gm = GameMode.ADVENTURE;
 					}
 					if (cmd.getName().equalsIgnoreCase("gm3")) {
-						gamemode_type = GameMode.SPECTATOR;
+						gm = GameMode.SPECTATOR;
 					}
-					player.setGameMode(gamemode_type);
+					player.setGameMode(gm);
 					return true;
 				} else {
 					sender.sendMessage(this.ErroPrefix + "You don't have permission to use gm command!");
